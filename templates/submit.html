@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container page"><h1>Submit Cards</h1>
+<p>Use AI pre-check, then create your order to get QR label and PDF certificate.</p>
+<h3>AI Pre-check</h3>
+<form id="ai-form" class="form" enctype="multipart/form-data">
+  <input type="file" id="cardImage" name="image" accept="image/*" required />
+  <button class="btn btn-primary" type="submit">Run AI Check</button>
+</form>
+<div id="ai-result" class="ai-result hidden"></div>
+<h3>Create Order</h3>
+<form id="order-form" class="form">
+  <input name="name" placeholder="Your name" required/>
+  <input name="email" type="email" placeholder="Email (optional)"/>
+  <input name="title" placeholder="Card title"/>
+  <select name="service"><option value="standard">Standard $15</option><option value="special">5 for $50</option></select>
+</form>
+<button id="create-order" class="btn btn-primary">Create Order</button>
+<div id="order-out" class="ai-result hidden"></div>
+</div>
+{% endblock %}

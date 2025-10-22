@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container page"><h1>Certification</h1>
+<div class="cert-card"><div><strong>Cert #:</strong> {{ order['cert'] }}</div>
+<div><strong>Title:</strong> {{ order['title'] }}</div>
+<div><strong>Grade:</strong> {{ order['grade'] }}</div>
+<div class="qr-wrap"><img src="{{ qr_url }}" width="140" height="140"/><div class="tiny">Scan to verify. Created {{ order['created_at'] }}</div></div>
+<div class="cert-actions"><a class="btn" href="{{ url_for('static', filename='labels/' + order['cert'] + '.png') }}" download>Download Label</a>
+<a class="btn" href="{{ url_for('static', filename='certs/' + order['cert'] + '.pdf') }}" download>Download PDF</a></div>
+</div></div>{% endblock %}

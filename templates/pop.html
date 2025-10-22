@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container page"><h1>Population Report</h1>
+<table class="pop-table"><thead><tr><th>Title</th><th>Grade</th><th>Count</th></tr></thead><tbody>
+{% for r in rows %}<tr><td>{{ r['title'] }}</td><td>{{ r['grade'] }}</td><td>{{ r['qty'] }}</td></tr>
+{% else %}<tr><td colspan="3">No data yet.</td></tr>{% endfor %}
+</tbody></table></div>
+{% endblock %}

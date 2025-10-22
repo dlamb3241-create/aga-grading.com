@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ app_name }}{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="announce"><div class="container"><strong>First Submission? 5 Cards for $50</strong>
+    <a class="btn-ann" href="{{ url_for('submit') }}">Start Submission</a></div></div>
+  <nav class="navbar"><div class="container nav-wrap">
+    <a class="brand" href="{{ url_for('index') }}"><span class="logo-hex">AGA</span> Authentic Grading Authority</a>
+    <div class="links">
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('pricing') }}">Pricing & Turnaround</a>
+      <a href="{{ url_for('submit') }}">Submit</a>
+      <a href="{{ url_for('lookup_page') }}">Cert Lookup</a>
+      <a href="{{ url_for('pop_report') }}">Pop Report</a>
+      <a href="{{ url_for('registry_page') }}">Registry</a>
+    </div>
+  </div></nav>
+  {% block content %}{% endblock %}
+  <footer class="footer"><div class="container foot-wrap"><div>© {{ app_name }} • Sports Cards Only</div></div></footer>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body></html>

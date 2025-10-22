@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero-ambient"><div id="hero-bg" class="hero-bg"></div>
+  <div class="container hero"><div class="hero-left">
+    <h1>Welcome to AGA Grading.</h1>
+    <p class="sub">AI pre-checks, QR certs, live pop report.</p>
+    <div class="hero-ctas"><a class="btn btn-primary lg" href="{{ url_for('submit') }}">Start</a>
+    <a class="btn btn-ghost lg" href="{{ url_for('pricing') }}">Pricing</a></div>
+    <div class="live-stats"><div>Total: <span id="stat-total">{{ total }}</span></div>
+    <div>Gem 10: <span id="stat-gem10">{{ gem10 }}</span></div></div>
+  </div>
+  <div class="hero-right"><div class="hero-card"><img src="{{ url_for('static', filename='img/fallback.jpg') }}" /></div></div>
+</div></section>
+{% endblock %}

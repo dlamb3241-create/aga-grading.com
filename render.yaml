@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: aga-grading
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: DB_PATH
+        value: aga.db
+      - key: CERT_SALT
+        generateValue: true
